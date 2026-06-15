@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无线电技术从入门到精通 - TechGeek Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 顶部导航（与主网站一致） -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo" onclick="location.href='index.html'" style="cursor:pointer;">
+                <i class="fas fa-microchip"></i>
+                <span>TechGeek Hub</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-item" data-section="home">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="index.html#radio" class="nav-item" data-section="radio">
+                    <i class="fas fa-broadcast-tower"></i> 无线电
+                </a>
+                <a href="index.html#computer" class="nav-item" data-section="computer">
+                    <i class="fas fa-desktop"></i> 电脑
+                </a>
+                <a href="index.html#audio" class="nav-item" data-section="audio">
+                    <i class="fas fa-music"></i> 音响
+                </a>
+                <a href="index.html#network" class="nav-item" data-section="network">
+                    <i class="fas fa-network-wired"></i> 网络
+                </a>
+            </nav>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="搜索文章、元件、教程..." id="searchInput">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <button class="btn-publish" onclick="alert('请先登录')">
+                    <i class="fas fa-pen"></i> 发布
+                </button>
+                <div class="user-menu">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user" alt="用户头像" class="avatar">
+                    <div class="dropdown">
+                        <a href="#"><i class="fas fa-user"></i> 个人中心</a>
+                        <a href="#"><i class="fas fa-heart"></i> 我的收藏</a>
+                        <a href="#"><i class="fas fa-cog"></i> 设置</a>
+                        <a href="#"><i class="fas fa-sign-out-alt"></i> 退出</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb-bar">
+        <div class="breadcrumb-container">
+            <a href="index.html"><i class="fas fa-home"></i> 首页</a>
+            <span class="sep">/</span>
+            <a href="index.html#radio">无线电</a>
+            <span class="sep">/</span>
+            <span class="current">无线电技术从入门到精通</span>
+        </div>
+    </div>
+
+    <!-- 文章主体 -->
+    <main class="article-page">
+        <div class="article-layout">
+            <!-- 左侧文章内容 -->
+            <article class="article-main">
+                <div class="article-header-detail">
+                    <div class="article-tags">
+                        <span class="article-tag tag-radio">无线电基础</span>
+                        <span class="article-tag tag-radio">业余无线电</span>
+                        <span class="article-tag tag-radio">天线技术</span>
+                    </div>
+                    <h1>无线电技术从入门到精通：原理、应用与实践指南</h1>
+                    <div class="article-meta-detail">
+                        <div class="author">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=ham" alt="HAM_老王">
+                            <div>
+                                <div class="name">HAM_老王</div>
+                                <div class="title">业余无线电爱好者 · 20年经验</div>
+                            </div>
+                        </div>
+                        <div class="stats">
+                            <span><i class="fas fa-calendar"></i> 2026年6月15日</span>
+                            <span><i class="fas fa-eye"></i> 12,580</span>
+                            <span><i class="fas fa-heart"></i> 486</span>
+                            <span><i class="fas fa-comment"></i> 89</span>
+                            <span><i class="fas fa-clock"></i> 阅读约 25 分钟</span>
+                        </div>
+                    </div>
+                </div>
+
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=400&fit=crop" alt="无线电技术" class="article-cover-img">
+
+                <div class="article-body">
+                    <p class="article-summary">
+                        无线电技术是现代通信的基石，从手机通话到卫星导航，从WiFi上网到广播电视，无一不依赖无线电波传递信息。本文将从基础原理出发，带你深入理解无线电技术的核心概念，并掌握实际应用技能。
+                    </p>
+
+                    <div class="toc">
+                        <h3><i class="fas fa-list"></i> 目录</h3>
+                        <ol>
+                            <li><a href="#sec1">无线电基础原理</a></li>
+                            <li><a href="#sec2">无线电系统组成</a></li>
+                            <li><a href="#sec3">天线技术</a></li>
+                            <li><a href="#sec4">传播特性与电离层</a></li>
+                            <li><a href="#sec5">业余无线电入门</a></li>
+                            <li><a href="#sec6">实践应用</a></li>
+                            <li><a href="#sec7">法规与安全</a></li>
+                            <li><a href="#sec8">进阶探索方向</a></li>
+                        </ol>
+                    </div>
+
+                    <h2 id="sec1"><i class="fas fa-book-open"></i> 一、无线电基础原理</h2>
+
+                    <h3>1.1 什么是无线电波</h3>
+                    <p>无线电波是一种电磁波，由交变电场和磁场组成，在空间中传播时不需要介质。它的传播速度等于光速，约为 <strong>3×10⁸ 米/秒</strong>。无线电波的频率范围通常从3kHz到300GHz，涵盖了从极低频到毫米波的广阔频谱。</p>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-lightbulb"></i> 核心公式</h4>
+                        <p>无线电波的三要素关系：</p>
+                    </div>
+
+                    <div class="formula-box">
+                        c = λ × f<br><br>
+                        <span class="comment">其中：</span><br>
+                        c = 光速 ≈ 3×10⁸ m/s<br>
+                        λ = 波长（米）<br>
+                        f = 频率（赫兹）
+                    </div>
+
+                    <p>这个公式告诉我们：<strong>频率越高，波长越短</strong>。例如，FM广播频率100MHz对应的波长约为3米，而WiFi 2.4GHz的波长仅约12.5厘米。</p>
+
+                    <h3>1.2 无线电频谱划分</h3>
+                    <p>国际电信联盟（ITU）将无线电频谱划分为多个波段，每个波段有不同的特性和用途：</p>
+
+                    <table class="comp-params-table">
+                        <thead>
+                            <tr><th>频段名称</th><th>频率范围</th><th>波长范围</th><th>典型应用</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>VLF 甚低频</td><td>3-30 kHz</td><td>100-10 km</td><td>潜艇通信、导航</td></tr>
+                            <tr><td>LF 低频</td><td>30-300 kHz</td><td>10-1 km</td><td>AM长波广播</td></tr>
+                            <tr><td>MF 中频</td><td>300-3000 kHz</td><td>1000-100 m</td><td>AM中波广播</td></tr>
+                            <tr><td>HF 高频</td><td>3-30 MHz</td><td>100-10 m</td><td>短波广播、业余无线电</td></tr>
+                            <tr><td>VHF 甚高频</td><td>30-300 MHz</td><td>10-1 m</td><td>FM广播、电视、对讲机</td></tr>
+                            <tr><td>UHF 特高频</td><td>300-3000 MHz</td><td>100-10 cm</td><td>手机、GPS、WiFi、蓝牙</td></tr>
+                            <tr><td>SHF 超高频</td><td>3-30 GHz</td><td>10-1 cm</td><td>卫星通信、5G、雷达</td></tr>
+                            <tr><td>EHF 极高频</td><td>30-300 GHz</td><td>10-1 mm</td><td>毫米波雷达、6G研究</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2 id="sec2"><i class="fas fa-microchip"></i> 二、无线电系统组成</h2>
+
+                    <h3>2.1 发射机原理</h3>
+                    <p>无线电发射机的核心任务是将信息（声音、数据、图像）加载到高频载波上，并通过天线辐射出去。这个过程称为<strong>调制</strong>。</p>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-broadcast-tower"></i> 发射机基本组成</h4>
+                        <ol>
+                            <li><strong>振荡器</strong>：产生稳定的高频载波信号</li>
+                            <li><strong>调制器</strong>：将基带信号加载到载波上</li>
+                            <li><strong>功率放大器</strong>：提升信号功率至发射所需电平</li>
+                            <li><strong>天线</strong>：将电信号转换为电磁波辐射</li>
+                            <li><strong>滤波器</strong>：抑制谐波和杂散发射</li>
+                        </ol>
+                    </div>
+
+                    <h3>2.2 调制技术详解</h3>
+
+                    <h3>幅度调制（AM）</h3>
+                    <p>通过改变载波的振幅来传递信息。AM广播（530-1700kHz）和航空通信（118-136MHz）使用这种技术。优点是电路简单，缺点是抗干扰能力差，功率效率低。</p>
+
+                    <div class="formula-box">
+                        s(t) = A<sub>c</sub>[1 + m·x(t)]·cos(2πf<sub>c</sub>t)<br><br>
+                        <span class="comment">m = 调制指数（0 < m ≤ 1）</span><br>
+                        <span class="comment">x(t) = 基带信号（|x(t)| ≤ 1）</span>
+                    </div>
+
+                    <h3>频率调制（FM）</h3>
+                    <p>通过改变载波的频率来传递信息。FM广播（88-108MHz）和业余无线电对讲机常用。抗干扰能力强，音质好，但占用带宽较大。</p>
+
+                    <div class="formula-box">
+                        s(t) = A<sub>c</sub>·cos[2πf<sub>c</sub>t + 2πk<sub>f</sub>∫x(τ)dτ]<br><br>
+                        <span class="comment">k<sub>f</sub> = 频偏常数（Hz/V）</span><br>
+                        <span class="comment">最大频偏 Δf = k<sub>f</sub>·|x(t)|<sub>max</sub></span>
+                    </div>
+
+                    <h3>数字调制</h3>
+                    <p>现代通信系统普遍采用数字调制，将数据转换为离散的信号状态：</p>
+
+                    <table class="comp-params-table">
+                        <thead>
+                            <tr><th>调制方式</th><th>调制参数</th><th>状态数</th><th>频谱效率</th><th>应用场景</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>ASK</td><td>幅度</td><td>2</td><td>低</td><td>RFID、简单遥控</td></tr>
+                            <tr><td>FSK</td><td>频率</td><td>2</td><td>中</td><td>蓝牙、Zigbee</td></tr>
+                            <tr><td>PSK</td><td>相位</td><td>2/4/8</td><td>中</td><td>GPS、WiFi</td></tr>
+                            <tr><td>QAM</td><td>幅度+相位</td><td>16/64/256</td><td>高</td><td>4G/5G、WiFi6</td></tr>
+                            <tr><td>OFDM</td><td>多载波</td><td>多子载波</td><td>很高</td><td>5G、WiFi6、DVB</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2 id="sec3"><i class="fas fa-satellite-dish"></i> 三、天线技术</h2>
+
+                    <h3>3.1 天线基本原理</h3>
+                    <p>天线是无线电系统的"嘴巴"和"耳朵"，负责电磁波与电信号的相互转换。天线的性能由多个参数决定：</p>
+
+                    <div class="tip-box">
+                        <h4><i class="fas fa-ruler-combined"></i> 天线关键参数</h4>
+                        <ul>
+                            <li><strong>增益（Gain）</strong>：天线在特定方向的辐射强度与理想点源天线的比值，单位dBi</li>
+                            <li><strong>方向性</strong>：天线辐射能量的空间分布特性</li>
+                            <li><strong>阻抗（Z）</strong>：通常为50Ω或75Ω，需与馈线匹配</li>
+                            <li><strong>驻波比（VSWR）</strong>：反映阻抗匹配程度，理想值为1:1，通常要求<1.5:1</li>
+                            <li><strong>带宽</strong>：天线能有效工作的频率范围</li>
+                        </ul>
+                    </div>
+
+                    <h3>3.2 常见天线类型</h3>
+
+                    <table class="comp-params-table">
+                        <thead>
+                            <tr><th>天线类型</th><th>结构特点</th><th>增益</th><th>典型应用</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>偶极子天线</td><td>两根1/4波长导体</td><td>2.15 dBi</td><td>FM广播、业余电台</td></tr>
+                            <tr><td>单极天线</td><td>1/4波长 + 地平面</td><td>5-7 dBi</td><td>手机、车载电台</td></tr>
+                            <tr><td>八木天线</td><td>引向器+有源振子+反射器</td><td>10-15 dBi</td><td>电视接收、业余无线电</td></tr>
+                            <tr><td>抛物面天线</td><td>碟形反射面+馈源</td><td>30-50 dBi</td><td>卫星通信、射电天文</td></tr>
+                            <tr><td>微带天线</td><td>印刷电路板上的贴片</td><td>5-8 dBi</td><td>GPS、WiFi路由器</td></tr>
+                            <tr><td>螺旋天线</td><td>螺旋状导体</td><td>10-15 dBi</td><td>卫星通信、航天器</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3>3.3 DIY八木天线制作</h3>
+                    <p>八木天线是业余无线电爱好者最常自制的定向天线。以下是一个针对430MHz（70cm业余频段）的设计：</p>
+
+                    <div class="code-block">
+<span class="comment"># 八木天线设计参数（430MHz）</span>
+<span class="comment"># 使用铝管或铜线制作</span>
+
+设计频率: f = 430 MHz
+波长: λ = c/f = 300/430 ≈ 0.697 m = 697 mm
+
+单元长度计算:
+  反射器: Lr = 0.495 × λ = 345 mm
+  有源振子: Ld = 0.473 × λ = 330 mm  <span class="comment"># 折合振子</span>
+  引向器1: L1 = 0.440 × λ = 307 mm
+  引向器2: L2 = 0.435 × λ = 303 mm
+  引向器3: L3 = 0.430 × λ = 300 mm
+
+单元间距:
+  反射器-振子: S1 = 0.125 × λ = 87 mm
+  振子-引向器1: S2 = 0.125 × λ = 87 mm
+  引向器间距: S3 = 0.150 × λ = 105 mm
+
+支撑: 20mm PVC管或木条
+振子: 6-10mm 铝管或粗铜线
+                    </div>
+
+                    <div class="tip-box">
+                        <h4><i class="fas fa-tools"></i> 制作要点</h4>
+                        <ol>
+                            <li>所有单元必须与支撑杆<strong>绝缘</strong>（使用塑料卡扣）</li>
+                            <li>有源振子中心需要断开，连接馈线</li>
+                            <li>使用50Ω同轴电缆（如RG-58或更好）</li>
+                            <li>制作完成后用<strong>天线分析仪</strong>测量驻波比</li>
+                            <li>如果SWR偏高，微调振子长度（每次2-3mm）</li>
+                        </ol>
+                    </div>
+
+                    <h2 id="sec4"><i class="fas fa-wave-square"></i> 四、传播特性与电离层</h2>
+
+                    <h3>4.1 传播方式分类</h3>
+
+                    <h3>地波传播</h3>
+                    <p>沿地球表面传播，频率越低绕射能力越强。AM中波广播（MF频段）主要依靠地波覆盖本地范围，白天传播距离约100-300公里。</p>
+
+                    <h3>天波传播（电离层反射）</h3>
+                    <p>短波（HF，3-30MHz）可被电离层反射回地面，实现数百至数千公里的远距离通信。这是业余无线电最迷人的传播方式。</p>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-globe"></i> 电离层分层</h4>
+                        <ul>
+                            <li><strong>D层</strong>（60-90km）：白天存在，吸收低频信号，夜间消失</li>
+                            <li><strong>E层</strong>（90-150km）：可反射VHF信号，sporadic E突发时可通联数千公里</li>
+                            <li><strong>F1层</strong>（150-250km）：夏季白天存在</li>
+                            <li><strong>F2层</strong>（250-400km）：最高最重要层，夜间合并为F层</li>
+                        </ul>
+                    </div>
+
+                    <h3>4.2 太阳活动与传播</h3>
+                    <p>电离层的电离程度受太阳辐射影响，呈现11年周期性变化：</p>
+
+                    <table class="comp-params-table">
+                        <thead>
+                            <tr><th>太阳活动期</th><th>特点</th><th>对HF传播影响</th><th>最佳频段</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>太阳活动高年</td><td>黑子数多，耀斑频繁</td><td>F2层电离强，高频段开通</td><td>14-28 MHz</td></tr>
+                            <tr><td>太阳活动低年</td><td>黑子数少，电离弱</td><td>低频段更稳定，高频段关闭</td><td>3.5-7 MHz</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="warning-box">
+                        <h4><i class="fas fa-exclamation-triangle"></i> 传播预测工具</h4>
+                        <p>推荐以下网站实时查看电离层状态和传播预测：</p>
+                        <ul>
+                            <li>DXWatch.com - 实时DX传播报告</li>
+                            <li>hamqsl.com - 太阳活动数据</li>
+                            <li>voacap.com - HF传播预测</li>
+                        </ul>
+                    </div>
+
+                    <h2 id="sec5"><i class="fas fa-id-card"></i> 五、业余无线电入门</h2>
+
+                    <h3>5.1 什么是业余无线电</h3>
+                    <p>业余无线电（Amateur Radio）是一项由国家无线电管理机构批准的、供业余无线电爱好者进行自我训练、相互通信和技术研究的无线电通信业务。全球约有300万持证的业余无线电操作员。</p>
+
+                    <h3>5.2 中国业余无线电执照</h3>
+                    <p>在中国，操作业余无线电台需要取得<strong>业余无线电台执照</strong>和<strong>操作证书</strong>：</p>
+
+                    <table class="comp-params-table">
+                        <thead>
+                            <tr><th>操作类别</th><th>允许频率</th><th>最大功率</th><th>考试难度</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>A类</td><td>30MHz以下 + 50-54MHz + 144-148MHz + 430-440MHz</td><td>25W</td><td>基础（法律法规+基础理论）</td></tr>
+                            <tr><td>B类</td><td>A类 + 所有HF频段</td><td>100W</td><td>中等（增加电路、传播知识）</td></tr>
+                            <tr><td>C类</td><td>所有业余频段</td><td>1000W</td><td>高级（全面技术知识）</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="tip-box">
+                        <h4><i class="fas fa-graduation-cap"></i> 考证流程</h4>
+                        <ol>
+                            <li>在当地无线电管理机构网站报名（通常每年2-4次考试）</li>
+                            <li>自学或参加培训班（推荐教材：《业余无线电通信》）</li>
+                            <li>参加理论考试（A类30题答对25题及格）</li>
+                            <li>考试合格后申请呼号（如 BG1AAA、BH4XXX）</li>
+                            <li>购买设备并办理电台执照</li>
+                        </ol>
+                    </div>
+
+                    <h3>5.3 入门设备推荐</h3>
+
+                    <table class="comp-params-table">
+                        <thead>
+                            <tr><th>设备类型</th><th>推荐型号</th><th>价格范围</th><th>特点</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>手持对讲机</td><td>宝锋 UV-5R</td><td>¥100-200</td><td>双段VHF/UHF，入门首选</td></tr>
+                            <tr><td>手持对讲机</td><td>八重洲 FT-65R</td><td>¥800-1200</td><td>日本品牌，做工精良</td></tr>
+                            <tr><td>车载电台</td><td>ICOM IC-2730A</td><td>¥2000-3000</td><td>双段双显，功率50W</td></tr>
+                            <tr><td>短波电台</td><td>XIEGU G90</td><td>¥2500-3500</td><td>国产SDR，HF+50MHz</td></tr>
+                            <tr><td>短波电台</td><td>ICOM IC-7300</td><td>¥8000-10000</td><td>经典SDR，触摸屏操作</td></tr>
+                            <tr><td>天线分析仪</td><td>RigExpert AA-55ZOOM</td><td>¥1500-2000</td><td>测量SWR、阻抗、回波损耗</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2 id="sec6"><i class="fas fa-broadcast-tower"></i> 六、实践应用</h2>
+
+                    <h3>6.1 VHF/UHF FM中继通联</h3>
+                    <p>中继台（Repeater）是架设在高山或高楼的自动转发设备，可以大大扩展手持对讲机的通信范围。</p>
+
+                    <div class="code-block">
+<span class="comment"># 典型中继台参数设置</span>
+
+接收频率: 439.460 MHz  <span class="comment"># 电台发射，中继接收</span>
+发射频率: 434.460 MHz  <span class="comment"># 电台接收，中继发射</span>
+频差: -5 MHz (下差)
+亚音: CTCSS 88.5 Hz  <span class="comment"># 防止误触发</span>
+
+操作步骤:
+1. 将对讲机设为中继模式
+2. 输入接收频率 439.460 MHz
+3. 设置频差方向为 "-"，差值 5 MHz
+4. 设置亚音编码 88.5 Hz
+5. 按住PTT讲话，松开收听
+                    </div>
+
+                    <h3>6.2 HF短波DX通联</h3>
+                    <p>DX（远距离）通联是业余无线电的终极乐趣。以下是首次HF通联的完整流程：</p>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-list-ol"></i> 首次HF通联 checklist</h4>
+                        <ol>
+                            <li>查看传播预测，选择当前开通的频段（如14MHz白天，7MHz傍晚）</li>
+                            <li>架设天线（水平偶极子或端馈半波天线）</li>
+                            <li>用天线分析仪调谐，确保SWR < 1.5:1</li>
+                            <li>打开电台，调节音量，选择USB或LSB模式</li>
+                            <li>在频段内寻找信号（CQ呼叫或回答他人的CQ）</li>
+                            <li>标准呼叫格式：<strong>CQ CQ CQ, this is Bravo Hotel 4 X-ray Yankee Zulu, BH4XYZ calling CQ and standing by</strong></li>
+                            <li>对方回答后交换信号报告（RS/RST）和QTH（位置）</li>
+                            <li>记录通联日志（时间、频率、呼号、信号报告、内容摘要）</li>
+                        </ol>
+                    </div>
+
+                    <h3>6.3 数字模式通信</h3>
+                    <p>除了传统的语音通联，现代业余无线电还支持多种数字模式：</p>
+
+                    <table class="comp-params-table">
+                        <thead>
+                            <tr><th>模式</th><th>带宽</th><th>特点</th><th>所需设备</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>CW（莫尔斯电码）</td><td>~150 Hz</td><td>效率最高，弱信号通联</td><td>电键或自动键</td></tr>
+                            <tr><td>RTTY</td><td>~250 Hz</td><td>经典电传打字机模式</td><td>电脑+声卡接口</td></tr>
+                            <tr><td>PSK31</td><td>31 Hz</td><td>极窄带，适合QRP低功率</td><td>电脑+声卡</td></tr>
+                            <tr><td>FT8</td><td>50 Hz</td><td>弱信号自动通信，全球流行</td><td>电脑+WSJT-X软件</td></tr>
+                            <tr><td>JT65/JT9</td><td>~200 Hz</td><td>EME月面反射通联</td><td>大天线+高功率</td></tr>
+                            <tr><td>D-STAR/DMR</td><td>6.25 kHz</td><td>数字语音+数据，联网中继</td><td>数字电台或热点</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2 id="sec7"><i class="fas fa-shield-alt"></i> 七、法规与安全</h2>
+
+                    <h3>7.1 中国无线电管理条例要点</h3>
+
+                    <div class="warning-box">
+                        <h4><i class="fas fa-gavel"></i> 重要法规</h4>
+                        <ul>
+                            <li><strong>无证发射违法</strong>：擅自设置、使用无线电台（站）的，可处最高50万元罚款</li>
+                            <li><strong>频率许可</strong>：业余频段内操作也需持有操作证书和电台执照</li>
+                            <li><strong>功率限制</strong>：严格按执照等级使用最大功率，不得擅自加大功率</li>
+                            <li><strong>禁止内容</strong>：不得发送与业余业务无关的信息（如商业广告、加密通信）</li>
+                            <li><strong>应急通信</strong>：发生重大自然灾害时，业余电台可参与应急通信，事后需报告</li>
+                        </ul>
+                    </div>
+
+                    <h3>7.2 电磁安全</h3>
+                    <p>射频辐射超过一定功率密度会对人体产生热效应。安全操作建议：</p>
+
+                    <div class="tip-box">
+                        <h4><i class="fas fa-radiation"></i> 安全距离参考</h4>
+                        <ul>
+                            <li><strong>VHF/UHF（<50W）</strong>：天线2米内避免长时间停留</li>
+                            <li><strong>HF（<100W）</strong>：天线3米内避免长时间停留</li>
+                            <li><strong>HF（>500W）</strong>：需要专业电磁环境评估</li>
+                            <li>发射时<strong>不要触摸天线</strong>，可能产生射频灼伤</li>
+                            <li>使用<strong>定向天线</strong>时，注意主瓣方向不要对准人员聚集区</li>
+                        </ul>
+                    </div>
+
+                    <h2 id="sec8"><i class="fas fa-rocket"></i> 八、进阶探索方向</h2>
+
+                    <p>掌握基础后，你可以向以下方向深入：</p>
+
+                    <h3>8.1 软件定义无线电（SDR）</h3>
+                    <p>使用软件处理射频信号，硬件仅需简单的射频前端。推荐入门设备：RTL-SDR（¥80-150），可接收100kHz-1.75GHz信号，配合SDR#或GQRX软件即可探索频谱。</p>
+
+                    <h3>8.2 卫星通信</h3>
+                    <p>业余卫星（OSCAR）和ISS国际空间站都有业余无线电载荷。使用八木天线和双段电台即可与卫星通联，甚至通过ISS的数字中继发送APRS位置信息。</p>
+
+                    <h3>8.3 自制设备（QRP）</h3>
+                    <p>QRP指低功率（通常<5W）通信。DIY一个简单的晶体管发射机或Arduino控制的CW收发信机，体验从零开始创造通信设备的乐趣。</p>
+
+                    <h3>8.4 应急通信（EMCOMM）</h3>
+                    <p>加入当地业余无线电应急通信组织（如ARES、RACES），在灾害导致常规通信中断时提供志愿服务。</p>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-book"></i> 推荐学习资源</h4>
+                        <ul>
+                            <li>《业余无线电通信》（童效勇编著）- 国内考试指定教材</li>
+                            <li>《ARRL Handbook》- 美国业余无线电协会年鉴，技术大全</li>
+                            <li>《射频电路设计》（Chris Bowick）- 电路设计经典</li>
+                            <li>QRZ.com - 全球最大的业余无线电呼号数据库</li>
+                            <li>eHam.net - 设备评测和论坛</li>
+                        </ul>
+                    </div>
+
+                    <h2><i class="fas fa-flag-checkered"></i> 结语</h2>
+
+                    <p>无线电技术是一门既古老又前沿的学科。从马可尼的第一次跨大西洋电报到今天的5G毫米波通信，无线电始终是人类突破空间限制、连接彼此的核心技术。</p>
+
+                    <p>作为业余无线电爱好者，你不仅能享受通联的乐趣，更能深入理解现代通信的底层原理。当你第一次用自己的设备、自己的天线，听到千里之外传来的声音时，那种成就感是无与伦比的。</p>
+
+                    <p style="font-size:1.1rem;font-weight:600;color:var(--primary);margin-top:32px;">
+                        73（最佳祝愿），这里是 BH4XYZ，期待在频率上与你相遇！
+                    </p>
+                </div>
+
+                <!-- 文章底部操作 -->
+                <div class="article-actions-bar">
+                    <button class="action-btn like-btn" onclick="this.classList.toggle('active');">
+                        <i class="fas fa-heart"></i> <span>486</span> 点赞
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-star"></i> 收藏
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-share-alt"></i> 分享
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-print"></i> 打印
+                    </button>
+                </div>
+
+                <!-- 评论区 -->
+                <div class="comments-section">
+                    <div class="comments-header">
+                        <h3><i class="fas fa-comments"></i> 评论 (89)</h3>
+                        <div class="comment-sort">
+                            <button class="active">最热</button>
+                            <button>最新</button>
+                        </div>
+                    </div>
+                    <div class="comment-form">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user" alt="我" class="avatar">
+                        <div class="comment-input-area">
+                            <textarea placeholder="写下你的评论..."></textarea>
+                            <div class="comment-form-actions">
+                                <button class="btn-upload-img"><i class="fas fa-image"></i> 上传图片</button>
+                                <button class="btn-submit-comment">发表评论</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments-list">
+                        <div class="comment-item">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=ham" alt="HAM_老王" class="comment-avatar">
+                            <div class="comment-body">
+                                <div class="comment-header">
+                                    <span class="comment-author">HAM_老王</span>
+                                    <span class="comment-time">作者 · 2小时前</span>
+                                </div>
+                                <div class="comment-text">感谢大家阅读！如有关于天线制作或考证的问题，欢迎在评论区交流。73！</div>
+                                <div class="comment-actions">
+                                    <button class="btn-like"><i class="fas fa-thumbs-up"></i> <span>56</span></button>
+                                    <button class="btn-reply"><i class="fas fa-reply"></i> 回复</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-item">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=newbie" alt="无线电新手" class="comment-avatar">
+                            <div class="comment-body">
+                                <div class="comment-header">
+                                    <span class="comment-author">无线电新手</span>
+                                    <span class="comment-time">5小时前</span>
+                                </div>
+                                <div class="comment-text">写得太好了！正在准备A类考试，这篇文章帮我理清了很多概念。请问有推荐的刷题APP吗？</div>
+                                <div class="comment-actions">
+                                    <button class="btn-like"><i class="fas fa-thumbs-up"></i> <span>23</span></button>
+                                    <button class="btn-reply"><i class="fas fa-reply"></i> 回复</button>
+                                </div>
+                                <div class="replies">
+                                    <div class="comment-item">
+                                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=ham" alt="HAM_老王" class="comment-avatar">
+                                        <div class="comment-body">
+                                            <div class="comment-header">
+                                                <span class="comment-author">HAM_老王</span>
+                                                <span class="comment-time">4小时前</span>
+                                            </div>
+                                            <div class="comment-text">推荐"业余无线电"微信小程序，里面有完整的题库和模拟考试功能。祝你考试顺利！</div>
+                                            <div class="comment-actions">
+                                                <button class="btn-like"><i class="fas fa-thumbs-up"></i> <span>18</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 右侧侧边栏 -->
+            <aside class="article-sidebar">
+                <!-- 作者卡片 -->
+                <div class="sidebar-card author-card">
+                    <div class="author-header">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=ham" alt="HAM_老王">
+                        <div>
+                            <div class="name">HAM_老王</div>
+                            <div class="title">业余无线电爱好者</div>
+                        </div>
+                    </div>
+                    <div class="author-stats">
+                        <div><span>128</span>文章</div>
+                        <div><span>3.2k</span>粉丝</div>
+                        <div><span>45k</span>获赞</div>
+                    </div>
+                    <button class="btn-follow">+ 关注</button>
+                </div>
+
+                <!-- 目录导航 -->
+                <div class="sidebar-card toc-card">
+                    <h4><i class="fas fa-list"></i> 文章目录</h4>
+                    <nav class="toc-nav">
+                        <a href="#sec1" class="active">一、无线电基础原理</a>
+                        <a href="#sec2">二、无线电系统组成</a>
+                        <a href="#sec3">三、天线技术</a>
+                        <a href="#sec4">四、传播特性与电离层</a>
+                        <a href="#sec5">五、业余无线电入门</a>
+                        <a href="#sec6">六、实践应用</a>
+                        <a href="#sec7">七、法规与安全</a>
+                        <a href="#sec8">八、进阶探索方向</a>
+                    </nav>
+                </div>
+
+                <!-- 相关文章 -->
+                <div class="sidebar-card">
+                    <h4><i class="fas fa-fire"></i> 热门文章</h4>
+                    <div class="related-list">
+                        <a href="#" class="related-item">
+                            <span class="num">1</span>
+                            <span class="title">变容二极管详解：从原理到VCO电路设计</span>
+                        </a>
+                        <a href="#" class="related-item">
+                            <span class="num">2</span>
+                            <span class="title">八木天线制作全攻略：从计算到调试</span>
+                        </a>
+                        <a href="#" class="related-item">
+                            <span class="num">3</span>
+                            <span class="title">FT8数字模式入门：弱信号通联新方式</span>
+                        </a>
+                        <a href="#" class="related-item">
+                            <span class="num">4</span>
+                            <span class="title">SDR软件无线电：RTL-SDR从入门到精通</span>
+                        </a>
+                        <a href="#" class="related-item">
+                            <span class="num">5</span>
+                            <span class="title">电离层传播预测：如何抓住DX开通信道</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 标签云 -->
+                <div class="sidebar-card">
+                    <h4><i class="fas fa-tags"></i> 相关标签</h4>
+                    <div class="tag-cloud">
+                        <a href="#">业余无线电</a>
+                        <a href="#">天线</a>
+                        <a href="#">短波</a>
+                        <a href="#">电离层</a>
+                        <a href="#">SDR</a>
+                        <a href="#">FT8</a>
+                        <a href="#">八木天线</a>
+                        <a href="#">QRP</a>
+                        <a href="#">卫星通信</a>
+                        <a href="#">EMCOMM</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- 回到顶部按钮 -->
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 目录高亮跟随滚动
+        const sections = document.querySelectorAll('h2[id]');
+        const tocLinks = document.querySelectorAll('.toc-nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // 点赞功能
+        document.querySelectorAll('.btn-like').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('liked');
+                const span = this.querySelector('span');
+                let count = parseInt(span.textContent);
+                span.textContent = this.classList.contains('liked') ? count + 1 : count - 1;
+            });
+        });
+    </script>
+</body>
+</html>

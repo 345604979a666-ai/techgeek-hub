@@ -1,0 +1,6 @@
+name = "techgeek-hub"
+main = ""
+compatibility_date = "2026-06-15"
+
+[site]
+bucket = "."

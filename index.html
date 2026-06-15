@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechGeek Hub - 技术极客社区</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-microchip"></i>
+                <span>TechGeek Hub</span>
+            </div>
+            <nav class="main-nav">
+                <a href="#" class="nav-item active" data-section="home">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="#" class="nav-item" data-section="radio">
+                    <i class="fas fa-broadcast-tower"></i> 无线电
+                </a>
+                <a href="#" class="nav-item" data-section="computer">
+                    <i class="fas fa-desktop"></i> 电脑
+                </a>
+                <a href="#" class="nav-item" data-section="audio">
+                    <i class="fas fa-music"></i> 音响
+                </a>
+                <a href="#" class="nav-item" data-section="network">
+                    <i class="fas fa-network-wired"></i> 网络
+                </a>
+            </nav>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="搜索文章、元件、教程..." id="searchInput">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <button class="btn-publish" id="btnPublish">
+                    <i class="fas fa-pen"></i> 发布
+                </button>
+                <div class="user-menu">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user" alt="用户头像" class="avatar">
+                    <div class="dropdown">
+                        <a href="#"><i class="fas fa-user"></i> 个人中心</a>
+                        <a href="#"><i class="fas fa-heart"></i> 我的收藏</a>
+                        <a href="#"><i class="fas fa-cog"></i> 设置</a>
+                        <a href="#"><i class="fas fa-sign-out-alt"></i> 退出</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主体内容区 -->
+    <main class="main-content">
+        <!-- 首页内容 -->
+        <section id="home" class="content-section active">
+            <!-- 轮播区 -->
+            <div class="hero-slider">
+                <div class="slider-container">
+                    <div class="slide active" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <div class="slide-content">
+                            <h2>探索无线电的无限可能</h2>
+                            <p>从基础元件到射频电路，从家电维修到天线制作，开启你的技术之旅</p>
+                            <button class="btn-primary">开始探索</button>
+                        </div>
+                    </div>
+                    <div class="slide" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <div class="slide-content">
+                            <h2>电脑硬件深度解析</h2>
+                            <p>CPU、显卡、摄像头、存储...全面掌握电脑硬件知识</p>
+                            <button class="btn-primary">查看详情</button>
+                        </div>
+                    </div>
+                    <div class="slide" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <div class="slide-content">
+                            <h2>音响发烧友的乐园</h2>
+                            <p>声学原理、器材评测、听感分享，感受声音的极致魅力</p>
+                            <button class="btn-primary">立即加入</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+
+            <!-- 分类入口 -->
+            <div class="category-grid">
+                <div class="category-card radio">
+                    <div class="card-icon"><i class="fas fa-broadcast-tower"></i></div>
+                    <h3>无线电技术</h3>
+                    <p>元件百科 · 电路设计 · 射频技术 · 家电维修 · 天线制作</p>
+                    <span class="article-count">1,257 篇文章</span>
+                </div>
+                <div class="category-card computer">
+                    <div class="card-icon"><i class="fas fa-desktop"></i></div>
+                    <h3>电脑硬件</h3>
+                    <p>CPU · 显卡 · 主板 · 存储 · 摄像头 · 显示器 · 装机指南</p>
+                    <span class="article-count">2,847 篇文章</span>
+                </div>
+                <div class="category-card audio">
+                    <div class="card-icon"><i class="fas fa-music"></i></div>
+                    <h3>音响知识</h3>
+                    <p>音箱耳机 · 功放DAC · 声学原理 · 听感评测 · 房间声学</p>
+                    <span class="article-count">892 篇文章</span>
+                </div>
+                <div class="category-card network">
+                    <div class="card-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>电脑网络</h3>
+                    <p>路由器 · 组网方案 · 网络安全 · NAS存储 · WiFi优化</p>
+                    <span class="article-count">1,534 篇文章</span>
+                </div>
+            </div>
+
+            <!-- 最新文章 -->
+            <div class="section-header">
+                <h2><i class="fas fa-fire"></i> 热门文章</h2>
+                <a href="#" class="view-all">查看全部 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="article-grid" id="hotArticles"></div>
+
+            <!-- 最新讨论 -->
+            <div class="section-header">
+                <h2><i class="fas fa-comments"></i> 热门讨论</h2>
+                <a href="#" class="view-all">查看全部 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="discussion-list" id="hotDiscussions"></div>
+
+            <!-- 图片墙 -->
+            <div class="section-header">
+                <h2><i class="fas fa-images"></i> 最新图库</h2>
+                <a href="#" class="view-all">查看全部 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="image-wall" id="imageWall"></div>
+        </section>
+
+        <!-- 无线电版块 -->
+        <section id="radio" class="content-section">
+            <div class="section-banner" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <div class="banner-content">
+                    <h1><i class="fas fa-broadcast-tower"></i> 无线电技术专区</h1>
+                    <p>元件百科 · 电路设计 · 射频技术 · 家电维修 · 天线制作 · 仪器仪表</p>
+                </div>
+            </div>
+
+            <div class="sub-nav">
+                <a href="#" class="sub-nav-item active" data-sub="components">元件百科</a>
+                <a href="#" class="sub-nav-item" data-sub="circuit">电路设计</a>
+                <a href="#" class="sub-nav-item" data-sub="rf">射频技术</a>
+                <a href="#" class="sub-nav-item" data-sub="repair">家电维修</a>
+                <a href="#" class="sub-nav-item" data-sub="antenna">天线技术</a>
+                <a href="#" class="sub-nav-item" data-sub="instrument">仪器仪表</a>
+            </div>
+
+            <div class="sub-content active" id="radio-components">
+                <div class="component-categories">
+                    <div class="comp-cat">
+                        <h3><i class="fas fa-circle"></i> 无源元件</h3>
+                        <div class="comp-list">
+                            <a href="#" class="comp-item" data-comp="resistor">电阻器</a>
+                            <a href="#" class="comp-item" data-comp="capacitor">电容器</a>
+                            <a href="#" class="comp-item" data-comp="inductor">电感器</a>
+                            <a href="#" class="comp-item" data-comp="crystal">晶振/谐振器</a>
+                        </div>
+                    </div>
+                    <div class="comp-cat">
+                        <h3><i class="fas fa-bolt"></i> 有源器件</h3>
+                        <div class="comp-list">
+                            <a href="#" class="comp-item" data-comp="diode">二极管</a>
+                            <a href="#" class="comp-item" data-comp="transistor">三极管</a>
+                            <a href="#" class="comp-item" data-comp="fet">场效应管</a>
+                            <a href="#" class="comp-item" data-comp="ic">集成电路</a>
+                        </div>
+                    </div>
+                    <div class="comp-cat">
+                        <h3><i class="fas fa-signal"></i> 射频专用</h3>
+                        <div class="comp-list">
+                            <a href="#" class="comp-item" data-comp="connector">射频连接器</a>
+                            <a href="#" class="comp-item" data-comp="filter">滤波器</a>
+                            <a href="#" class="comp-item" data-comp="splitter">功分器/耦合器</a>
+                            <a href="#" class="comp-item" data-comp="circulator">环形器/隔离器</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="component-detail" id="componentDetail"></div>
+            </div>
+
+            <div class="sub-content" id="radio-repair">
+                <div class="repair-categories">
+                    <div class="repair-cat-card" data-repair="tv">
+                        <i class="fas fa-tv"></i>
+                        <h4>电视机维修</h4>
+                        <p>液晶电视、OLED、背光驱动、电源板</p>
+                    </div>
+                    <div class="repair-cat-card" data-repair="ac">
+                        <i class="fas fa-snowflake"></i>
+                        <h4>空调/冰箱维修</h4>
+                        <p>变频模块、压缩机、制冷系统</p>
+                    </div>
+                    <div class="repair-cat-card" data-repair="washer">
+                        <i class="fas fa-tshirt"></i>
+                        <h4>洗衣机维修</h4>
+                        <p>电机驱动、变频板、传感器</p>
+                    </div>
+                    <div class="repair-cat-card" data-repair="kitchen">
+                        <i class="fas fa-utensils"></i>
+                        <h4>厨房电器维修</h4>
+                        <p>电磁炉、微波炉、电饭煲、油烟机</p>
+                    </div>
+                    <div class="repair-cat-card" data-repair="heater">
+                        <i class="fas fa-fire"></i>
+                        <h4>热水器维修</h4>
+                        <p>电热水器、燃气热水器、空气能</p>
+                    </div>
+                    <div class="repair-cat-card" data-repair="small">
+                        <i class="fas fa-fan"></i>
+                        <h4>小家电维修</h4>
+                        <p>电风扇、吸尘器、加湿器、电吹风</p>
+                    </div>
+                </div>
+                <div class="repair-detail" id="repairDetail"></div>
+            </div>
+        </section>
+
+        <!-- 电脑版块 -->
+        <section id="computer" class="content-section">
+            <div class="section-banner" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <div class="banner-content">
+                    <h1><i class="fas fa-desktop"></i> 电脑硬件专区</h1>
+                    <p>CPU · 显卡 · 主板 · 存储 · 摄像头 · 显示器 · 装机指南 · 故障维修</p>
+                </div>
+            </div>
+
+            <div class="sub-nav">
+                <a href="#" class="sub-nav-item active" data-sub="cpu">处理器</a>
+                <a href="#" class="sub-nav-item" data-sub="gpu">显卡</a>
+                <a href="#" class="sub-nav-item" data-sub="motherboard">主板</a>
+                <a href="#" class="sub-nav-item" data-sub="storage">存储</a>
+                <a href="#" class="sub-nav-item" data-sub="memory">内存</a>
+                <a href="#" class="sub-nav-item" data-sub="cooling">散热</a>
+                <a href="#" class="sub-nav-item" data-sub="psu">电源</a>
+                <a href="#" class="sub-nav-item" data-sub="case">机箱</a>
+                <a href="#" class="sub-nav-item" data-sub="peripheral">外设</a>
+                <a href="#" class="sub-nav-item" data-sub="webcam">摄像头</a>
+                <a href="#" class="sub-nav-item" data-sub="monitor">显示器</a>
+                <a href="#" class="sub-nav-item" data-sub="build">装机</a>
+            </div>
+
+            <div class="sub-content active" id="computer-webcam">
+                <div class="webcam-guide">
+                    <div class="webcam-categories">
+                        <div class="webcam-cat active" data-webcam="desktop">
+                            <i class="fas fa-video"></i>
+                            <span>桌面摄像头</span>
+                        </div>
+                        <div class="webcam-cat" data-webcam="conference">
+                            <i class="fas fa-users"></i>
+                            <span>会议摄像头</span>
+                        </div>
+                        <div class="webcam-cat" data-webcam="streaming">
+                            <i class="fas fa-broadcast-tower"></i>
+                            <span>直播摄像头</span>
+                        </div>
+                        <div class="webcam-cat" data-webcam="capture">
+                            <i class="fas fa-film"></i>
+                            <span>视频采集卡</span>
+                        </div>
+                        <div class="webcam-cat" data-webcam="accessory">
+                            <i class="fas fa-tools"></i>
+                            <span>配件</span>
+                        </div>
+                    </div>
+                    <div class="webcam-content" id="webcamContent"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 音响版块 -->
+        <section id="audio" class="content-section">
+            <div class="section-banner" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <div class="banner-content">
+                    <h1><i class="fas fa-music"></i> 音响发烧专区</h1>
+                    <p>音箱耳机 · 功放DAC · 声学原理 · 听感评测 · 房间声学 · 黑胶/CD</p>
+                </div>
+            </div>
+            <div class="sub-nav">
+                <a href="#" class="sub-nav-item active" data-sub="speakers" onclick="app.showAudioCategory('speakers'); return false;">
+                    <i class="fas fa-headphones"></i> 音箱/耳机
+                </a>
+                <a href="#" class="sub-nav-item" data-sub="amp" onclick="app.showAudioCategory('amp'); return false;">
+                    <i class="fas fa-sliders-h"></i> 功放/DAC
+                </a>
+                <a href="#" class="sub-nav-item" data-sub="acoustic" onclick="app.showAudioCategory('acoustic'); return false;">
+                    <i class="fas fa-wave-square"></i> 声学原理
+                </a>
+                <a href="#" class="sub-nav-item" data-sub="vinyl" onclick="app.showAudioCategory('vinyl'); return false;">
+                    <i class="fas fa-compact-disc"></i> 黑胶/CD
+                </a>
+                <a href="#" class="sub-nav-item" data-sub="cable" onclick="app.showAudioCategory('cable'); return false;">
+                    <i class="fas fa-plug"></i> 线材配件
+                </a>
+            </div>
+            <div class="sub-content active" id="audioContent">
+                <!-- 内容由JS动态加载 -->
+            </div>
+        </section>
+
+        <!-- 网络版块 -->
+        <section id="network" class="content-section">
+            <div class="section-banner" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                <div class="banner-content">
+                    <h1><i class="fas fa-network-wired"></i> 电脑网络专区</h1>
+                    <p>路由器 · 组网方案 · 网络安全 · NAS存储 · WiFi优化 · 网线制作</p>
+                </div>
+            </div>
+            <div class="coming-soon">
+                <i class="fas fa-wifi"></i>
+                <h2>网络版块建设中</h2>
+                <p>精彩内容即将上线，敬请期待...</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- 发布文章弹窗 -->
+    <div class="modal" id="publishModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-pen"></i> 发布文章</h3>
+                <button class="close-btn" id="closePublish">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>文章标题</label>
+                    <input type="text" id="articleTitle" placeholder="请输入文章标题">
+                </div>
+                <div class="form-group">
+                    <label>选择分类</label>
+                    <select id="articleCategory">
+                        <option value="">请选择分类</option>
+                        <optgroup label="无线电">
+                            <option value="radio-component">元件百科</option>
+                            <option value="radio-circuit">电路设计</option>
+                            <option value="radio-repair">家电维修</option>
+                            <option value="radio-antenna">天线技术</option>
+                        </optgroup>
+                        <optgroup label="电脑硬件">
+                            <option value="computer-cpu">处理器</option>
+                            <option value="computer-gpu">显卡</option>
+                            <option value="computer-webcam">摄像头</option>
+                            <option value="computer-build">装机指南</option>
+                        </optgroup>
+                        <optgroup label="音响">
+                            <option value="audio-speaker">音箱</option>
+                            <option value="audio-headphone">耳机</option>
+                            <option value="audio-amp">功放/DAC</option>
+                        </optgroup>
+                        <optgroup label="网络">
+                            <option value="network-router">路由器</option>
+                            <option value="network-nas">NAS存储</option>
+                            <option value="network-security">网络安全</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>文章内容</label>
+                    <div class="editor-toolbar">
+                        <button type="button" data-cmd="bold"><i class="fas fa-bold"></i></button>
+                        <button type="button" data-cmd="italic"><i class="fas fa-italic"></i></button>
+                        <button type="button" data-cmd="underline"><i class="fas fa-underline"></i></button>
+                        <button type="button" data-cmd="insertImage"><i class="fas fa-image"></i></button>
+                        <button type="button" data-cmd="insertCode"><i class="fas fa-code"></i></button>
+                    </div>
+                    <textarea id="articleContent" rows="10" placeholder="请输入文章内容..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>上传图片</label>
+                    <div class="image-upload" id="imageUpload">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>点击或拖拽上传图片</p>
+                        <input type="file" id="imageInput" accept="image/*" multiple hidden>
+                    </div>
+                    <div class="image-preview" id="imagePreview"></div>
+                </div>
+                <div class="form-group">
+                    <label>标签</label>
+                    <input type="text" id="articleTags" placeholder="输入标签，用逗号分隔">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="btnSaveDraft">保存草稿</button>
+                <button class="btn-primary" id="btnSubmitArticle">发布文章</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 图片预览弹窗 -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content image-modal-content">
+            <button class="close-btn" id="closeImageModal">&times;</button>
+            <img src="" alt="预览" id="previewImage">
+            <div class="image-info" id="imageInfo"></div>
+        </div>
+    </div>
+
+    <!-- 评论区组件模板 -->
+    <template id="commentTemplate">
+        <div class="comment-item">
+            <img src="" alt="" class="comment-avatar">
+            <div class="comment-body">
+                <div class="comment-header">
+                    <span class="comment-author"></span>
+                    <span class="comment-time"></span>
+                </div>
+                <div class="comment-text"></div>
+                <div class="comment-actions">
+                    <button class="btn-like"><i class="fas fa-thumbs-up"></i> <span>0</span></button>
+                    <button class="btn-reply"><i class="fas fa-reply"></i> 回复</button>
+                    <button class="btn-report"><i class="fas fa-flag"></i> 举报</button>
+                </div>
+                <div class="reply-form" style="display:none;">
+                    <textarea rows="2" placeholder="写下你的回复..."></textarea>
+                    <button class="btn-submit-reply">提交回复</button>
+                </div>
+                <div class="replies"></div>
+            </div>
+        </div>
+    </template>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
